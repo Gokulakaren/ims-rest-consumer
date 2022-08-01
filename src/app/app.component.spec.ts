@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ims-rest-consumer');
   });
 
-  it('should render title', () => {
+  it('should render title in h2 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ims-rest-consumer app is running!');
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('product inventory management system');
   });
 });
